@@ -1,0 +1,7 @@
+$WorkDirectory /var/lib/rsyslog
+$ActionQueueFileName fwdRule1
+$ActionQueueMaxDiskSpace 1g
+$ActionQueueSaveOnShutdown on
+$ActionQueueType LinkedList
+$ActionResumeRetryCount -1
+*.* @@~~~DCO_RSYSLOG_REMOTE_HOST~~~:~~~DCO_RSYSLOG_REMOTE_PORT~~~

@@ -1,2 +1,13 @@
 # docker-centos-opinionated
-An opinionated centos docker image with S6, crond...
+
+An opinionated centos docker image with S6, rsyslog, cronie...
+
+# (some) Inspiration sources
+
+- [http://blog.tutum.co/2014/10/28/the-5-most-important-things-ive-learned-from-using-docker/](the-5-most-important-things-ive-learned-from-using-docker)
+- [http://blog.tutum.co/2014/12/02/docker-and-s6-my-new-favorite-process-supervisor/](docker-and-s6-my-new-favorite-process-supervisor)
+- [http://phusion.github.io/baseimage-docker/](baseimage-docker)
+- [https://github.com/just-containers/s6-overlay](s6-overlay)
+- [http://skarnet.org/software/s6/overview.html](s6)
+- [http://www.rsyslog.com/](rsyslog)
+- [https://fedorahosted.org/cronie/](cronie)
