@@ -1,5 +1,7 @@
 # docker-centos-opinionated
 
+[![](https://badge.imagelayers.io/thefab/centos-opinionated:latest.svg)](https://imagelayers.io/?images=thefab/centos-opinionated:latest 'Get your own badge on imagelayers.io')
+
 An opinionated centos docker image with S6, rsyslog, cronie...
 
 # (some) Inspiration sources
