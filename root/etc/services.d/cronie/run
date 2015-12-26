@@ -1,7 +1,0 @@
-#!/usr/bin/with-contenv bash
-
-if test "${DCO_CRONIE_START}" = "1"; then
-    exec /sbin/crond -m off -p -s -n
-else
-    exec /bin/sleep infinity
-fi

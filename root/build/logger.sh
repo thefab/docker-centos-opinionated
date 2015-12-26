@@ -12,6 +12,6 @@ zcat ${ARCHIVE_NAME} |tar xvf -
 cd ${DIR_NAME} || exit 1
 
 ./autogen.sh
-./configure --prefix=/usr/local
+./configure --prefix=/usr
 make logger
-cp logger /usr/local/bin/
+cp logger /usr/bin/
