@@ -15,6 +15,7 @@ RUN /build/update.sh && \
     /build/s6_overlay.sh && \
     /build/rsyslog.sh && \
     /build/cronie.sh && \
+    /build/add_fake_rpm.sh && \
     /build/remove_buildtime_dependencies.sh
 
 ENTRYPOINT ["/init"]

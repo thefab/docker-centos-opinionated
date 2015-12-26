@@ -33,6 +33,11 @@ RUN /build/rsyslog.sh
 ADD root/build/cronie.sh /build/cronie.sh
 RUN /build/cronie.sh
 
+# Add fake RPM
+ADD root/build/add_fake_rpm.sh /build/add_fake_rpm.sh
+ADD root/build/centos_opinionated.spec /build/centos_opinionated.spec
+RUN /build/add_fake_rpm.sh
+
 # Remove build dependencies
 ADD root/build/remove_buildtime_dependencies.sh /build/remove_buildtime_dependencies.sh
 RUN /build/remove_buildtime_dependencies.sh

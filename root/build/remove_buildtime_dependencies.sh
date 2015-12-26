@@ -12,4 +12,4 @@ for PACKAGE in `cat /build/new_packages.list`; do
     fi
 done
 yum clean all
-rm -Rf /build
+rm -Rf /build /root/rpmbuild
