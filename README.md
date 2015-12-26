@@ -4,6 +4,7 @@
 
 [![Build Status](https://travis-ci.org/thefab/docker-centos-opinionated.svg?branch=master)](https://travis-ci.org/thefab/docker-centos-opinionated)
 [![](https://badge.imagelayers.io/thefab/centos-opinionated:latest.svg)](https://imagelayers.io/?images=thefab/centos-opinionated:centos6 'badge from imagelayers.io')
+
 [This image on the "Docker Hub"](https://hub.docker.com/r/thefab/centos-opinionated/)
 
 **WARNING: alpha stage quality**
@@ -18,9 +19,9 @@ Features:
 - Updated image (at build time)
 - Reasonable size (125MB compressed on the hub), reasonable number of layers (10) with a squashed Dockerfile (and another one to debug)
 - Don't add too many packages (6) by recompiling and installing just what's needed
-- Init system and multiple processes launcher/supervisor ([http://skarnet.org/software/s6/overview.html](s6))
-- (optional) syslog daemon ([http://www.rsyslog.com/](rsyslog)) and logger binary, can store locally or forward to another syslog with a simple environnement variable
-- (optional) complete cron/anacron daemon ([[https://fedorahosted.org/cronie/](cronie))
+- Init system and multiple processes launcher/supervisor ([S6](http://skarnet.org/software/s6/overview.html))
+- (optional) syslog daemon ([rsyslog](http://www.rsyslog.com)) and logger binary, can store locally or forward to another syslog with a simple environnement variable
+- (optional) complete cron/anacron daemon ([cronie](https://fedorahosted.org/cronie/))
 - logrotate system
 
 ## Non-Features
@@ -46,10 +47,10 @@ Available environnement variables:
 
 ## (some) Inspiration sources
 
-- [http://blog.tutum.co/2014/10/28/the-5-most-important-things-ive-learned-from-using-docker/](the-5-most-important-things-ive-learned-from-using-docker)
-- [http://blog.tutum.co/2014/12/02/docker-and-s6-my-new-favorite-process-supervisor/](docker-and-s6-my-new-favorite-process-supervisor)
-- [http://phusion.github.io/baseimage-docker/](baseimage-docker)
-- [https://github.com/just-containers/s6-overlay](s6-overlay)
-- [http://skarnet.org/software/s6/overview.html](s6)
-- [http://www.rsyslog.com/](rsyslog)
-- [https://fedorahosted.org/cronie/](cronie)
+- [the-5-most-important-things-ive-learned-from-using-docker](http://blog.tutum.co/2014/10/28/the-5-most-important-things-ive-learned-from-using-docker/)
+- [docker-and-s6-my-new-favorite-process-supervisor](http://blog.tutum.co/2014/12/02/docker-and-s6-my-new-favorite-process-supervisor/)
+- [baseimage-docker](http://phusion.github.io/baseimage-docker/)
+- [s6-overlay](https://github.com/just-containers/s6-overlay)
+- [s6](http://skarnet.org/software/s6/overview.html)
+- [rsyslog](http://www.rsyslog.com/)
+- [cronie](https://fedorahosted.org/cronie/)
