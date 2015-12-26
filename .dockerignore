@@ -1,0 +1,5 @@
+.git/*
+.travis.yml
+LICENSE
+Makefile
+README.md
