@@ -40,6 +40,7 @@ Available environnement variables:
 - `DCO_RSYSLOG_START` (if "1" (default) then starts the syslog daemon)
 - `DCO_RSYSLOG_REMOTE_HOST` (if "null" (default) then don't send logs to another syslog daemon, else forward logs to this hostname)
 - `DCO_RSYSLOG_REMOTE_PORT` (the remote UDP port of the (optional) remote syslog daemon, default value: 514)
+- `DCO_RSYSLOG_LOCAL_FILES` (if "1" (default) then log to local files in /var/log)
 
 ## Help wanted 
 
