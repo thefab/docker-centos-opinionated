@@ -10,6 +10,10 @@ ENV DCO_CRONIE_START=1 \
 # Update the image
 RUN yum update -y
 
+# Add EPEL repo (enabled=0 by default, you have to add --enablerepo=epel to use it)
+ADD root/build/add_epel.sh /build/add_epel.sh
+RUN /build/add_epel.sh
+
 # Add runtime dependencies
 ADD root/build/add_runtime_dependencies.sh /build/add_runtime_dependencies.sh
 RUN /build/add_runtime_dependencies.sh
@@ -18,7 +22,11 @@ RUN /build/add_runtime_dependencies.sh
 ADD root/build/add_buildtime_dependencies.sh /build/add_buildtime_dependencies.sh
 RUN /build/add_buildtime_dependencies.sh
 
- # Build logger
+# Add envtpl (https://github.com/andreasjansson/envtpl)
+ADD root/build/envtpl.sh /build/envtpl.sh
+RUN /build/envtpl.sh
+
+# Build logger
 ADD root/build/logger.sh /build/logger.sh
 RUN /build/logger.sh
 

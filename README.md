@@ -7,8 +7,6 @@
 
 [This image on the "Docker Hub"](https://hub.docker.com/r/thefab/centos-opinionated/)
 
-**WARNING: beta stage quality**
-
 ## Features
 
 This repository holds an opinionated centos (v6) docker image to be used as a 
@@ -17,19 +15,23 @@ base docker image. Some inspiration sources are given at the end of this file.
 Features:
 
 - Updated image (at build time)
-- Reasonable size (125MB compressed on the hub), reasonable number of layers (10) with a squashed Dockerfile (and another one to debug)
-- Don't add too many packages (6) by recompiling and installing just what's needed
+- Reasonable size (106MB compressed on the hub), reasonable number of layers (9) with a squashed Dockerfile (and another one to debug)
+- Don't add too many packages (3) by recompiling and installing just what's needed
+- Don't break the upstream system :
+    - add a fake RPM to avoid conflicts between upstream RPM and custom binaries compiled here
+    - add a hidden virtualenv to install a tool and its dependencies without polluting the distribution
 - Init system and multiple processes launcher/supervisor ([S6](http://skarnet.org/software/s6/overview.html))
 - (optional) syslog daemon ([rsyslog](http://www.rsyslog.com)) and logger binary, can store locally or forward to another syslog with a simple environnement variable
 - (optional) complete cron/anacron daemon ([cronie](https://fedorahosted.org/cronie/))
-- logrotate system
+- logrotate binary
+- Add [epel](https://fedoraproject.org/wiki/EPEL) yum repository but disabled by default (just add `--enablerepo=epel` to your yum commands to use it)
+- Install [envtpl](https://github.com/andreasjansson/envtpl) generic tool to be able to automatically adjust configuration files from environnement
 
 ## Non-Features
 
 - we don't want a SSH daemon
 
 ## Usage and configuration
-
 
 Not really usefull (because it's mainly a base image to use in the `FROM` keyword) but you can play with it with (for example):
 
@@ -121,8 +123,6 @@ Example 2 (will work):
 
 do_something_with ${MY_CONTAINER_ENV}
 ```
-
-
 
 ## Help wanted 
 
