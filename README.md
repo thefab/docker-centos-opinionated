@@ -7,7 +7,7 @@
 
 [This image on the "Docker Hub"](https://hub.docker.com/r/thefab/centos-opinionated/)
 
-**WARNING: alpha stage quality**
+**WARNING: beta stage quality**
 
 ## Features
 
@@ -30,6 +30,7 @@ Features:
 
 ## Usage and configuration
 
+
 Not really usefull (because it's mainly a base image to use in the `FROM` keyword) but you can play with it with (for example):
 
     docker run -i -t thefab/centos-opinionated:centos6 bash
@@ -41,6 +42,87 @@ Available environnement variables:
 - `DCO_RSYSLOG_REMOTE_HOST` (if "null" (default) then don't send logs to another syslog daemon, else forward logs to this hostname)
 - `DCO_RSYSLOG_REMOTE_PORT` (the remote UDP port of the (optional) remote syslog daemon, default value: 514)
 - `DCO_RSYSLOG_LOCAL_FILES` (if "1" (default) then log to local files in /var/log)
+
+## FAQ
+
+### How to override this image to add your service on top of it ?
+
+When you start this image with the default "entrypoint" (`/init`), it launch the S6 process supervisor (see links at the end) 
+provided by the [s6-overlay](https://github.com/just-containers/s6-overlay).
+
+First, it executes `/etc/cont-init.d/*` initialization (short) tasks. Then, it launchs `/etc/services/*/run` script. This script
+must execute your daemon in a long-lived way and will have to deal with signals. If this "run script" exits, it will be automatically 
+restarted. An easy way to write a such script is to use the "exec" bash builtin with the "foreground mode" startup command of your service.
+
+For example:
+
+```bash
+#!/bin/sh
+
+exec /sbin/rsyslogd -n
+```
+
+Because of "exec", the script will be replaced by the launched command. So you won't have to deal with signals by yourself.
+
+So a complete example to override this image with a new service on top of it can be:
+
+```
+$ find my_image
+
+my_image/
+my_image/Dockerfile
+my_image/root
+my_image/root/etc
+my_image/root/etc/cont-init.d
+my_image/root/etc/cont-init.d/my_initialization_script
+my_image/root/etc/services.d
+my_image/root/etc/services.d/myapp
+my_image/root/etc/services.d/myapp/run
+```
+
+With `my_image/Dockerfile` like:
+
+```
+FROM thefab/centos-opinionated:centos6
+
+COPY root /
+```
+
+And that's all ! Your custom service will be executed as well as rsyslog, cron services provides by the base image.
+
+## Can i use CMD with the init entrypoint ?
+
+Yes, quotted from the [s6-overlay](https://github.com/just-containers/s6-overlay) README:
+
+^ Using CMD is a really convenient way to take advantage of the s6-overlay. 
+^ Your CMD can be given at build-time in the Dockerfile, or at runtime on the command line, either way is fine - it will be run under the s6 supervisor, and when it fails or exits, the container will exit. You can even run interactive programs under the s6 supervisor!
+
+Please consult [s6-overlay](https://github.com/just-containers/s6-overlay) REAME for examples and more details.
+
+### Why I can't access to my environnement variables in my services script ?
+
+Because of S6 overlay. If you want to use environnement variables in your scripts, you have to change your shebang to use the "with-contenv" 
+S6 helper. 
+
+Example 1 (won't work):  
+
+```bash
+#!/bin/bash
+
+# don't work example
+
+do_something_with ${MY_CONTAINER_ENV}
+```
+
+Example 2 (will work):
+
+```bash
+#!/usr/bin/with-contenv bash
+
+do_something_with ${MY_CONTAINER_ENV}
+```
+
+
 
 ## Help wanted 
 
