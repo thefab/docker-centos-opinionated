@@ -94,8 +94,8 @@ And that's all ! Your custom service will be executed as well as rsyslog, cron s
 
 Yes, quotted from the [s6-overlay](https://github.com/just-containers/s6-overlay) README:
 
-^ Using CMD is a really convenient way to take advantage of the s6-overlay. 
-^ Your CMD can be given at build-time in the Dockerfile, or at runtime on the command line, either way is fine - it will be run under the s6 supervisor, and when it fails or exits, the container will exit. You can even run interactive programs under the s6 supervisor!
+> Using CMD is a really convenient way to take advantage of the s6-overlay. 
+> Your CMD can be given at build-time in the Dockerfile, or at runtime on the command line, either way is fine - it will be run under the s6 supervisor, and when it fails or exits, the container will exit. You can even run interactive programs under the s6 supervisor!
 
 Please consult [s6-overlay](https://github.com/just-containers/s6-overlay) REAME for examples and more details.
 
