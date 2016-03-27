@@ -1,9 +1,11 @@
 # docker-centos-opinionated
 
-## Badges, warnings and links
-
-[![Build Status](https://travis-ci.org/thefab/docker-centos-opinionated.svg?branch=master)](https://travis-ci.org/thefab/docker-centos-opinionated)
-[![](https://badge.imagelayers.io/thefab/centos-opinionated:latest.svg)](https://imagelayers.io/?images=thefab/centos-opinionated:centos6 'badge from imagelayers.io')
+[![Travis](https://img.shields.io/travis/thefab/docker-centos-opinionated.svg)]()
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/thefab/centos-opinionated/centos6.svg)]()
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/thefab/centos-opinionated/centos6.svg)]()
+[![Docker Pulls](https://img.shields.io/docker/pulls/thefab/centos-opinionated.svg)]()
+[![GitHub license](https://img.shields.io/github/license/thefab/docker-centos-opinionated.svg)]()
+[![Maintenance](https://img.shields.io/maintenance/yes/2016.svg)]()
 
 [This image on the "Docker Hub"](https://hub.docker.com/r/thefab/centos-opinionated/)
 
