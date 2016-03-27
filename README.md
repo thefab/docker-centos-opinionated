@@ -1,13 +1,12 @@
 # docker-centos-opinionated
 
-[![Travis](https://img.shields.io/travis/thefab/docker-centos-opinionated.svg)]()
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/thefab/centos-opinionated/centos6.svg)]()
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/thefab/centos-opinionated/centos6.svg)]()
-[![Docker Pulls](https://img.shields.io/docker/pulls/thefab/centos-opinionated.svg)]()
+[![Travis](https://img.shields.io/travis/thefab/docker-centos-opinionated.svg)](https://travis-ci.org/thefab/docker-centos-opinionated)
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/thefab/centos-opinionated/centos6.svg)](https://imagelayers.io/?images=thefab/centos-opinionated:centos6)
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/thefab/centos-opinionated/centos6.svg)](https://imagelayers.io/?images=thefab/centos-opinionated:centos6)
+[![Docker Pulls](https://img.shields.io/docker/pulls/thefab/centos-opinionated.svg)](https://hub.docker.com/r/thefab/centos-opinionated/)
+[![DockerHub](https://img.shields.io/badge/docker%20hub-link-green.svg)](https://hub.docker.com/r/thefab/centos-opinionated/)
 [![GitHub license](https://img.shields.io/github/license/thefab/docker-centos-opinionated.svg)]()
 [![Maintenance](https://img.shields.io/maintenance/yes/2016.svg)]()
-
-[This image on the "Docker Hub"](https://hub.docker.com/r/thefab/centos-opinionated/)
 
 ## Features
 
