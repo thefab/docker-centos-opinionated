@@ -2,5 +2,5 @@
 
 rm -Rf /etc/services.d/020_cronie
 if test "${DCO_CRONIE_START}" = "1"; then
-    cp -Rf /etc/services.d.dco/020_cronie /etc/services.d/
+    cp -Rf /etc/services.d.template/020_cronie /etc/services.d/
 fi
