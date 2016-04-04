@@ -13,7 +13,7 @@ Buildroot: %{_topdir}/tmp/%{name}-root
 Packager: Fabien MARTY <fabien.marty@gmail.com>
 ExclusiveOs: linux
 AutoReq: no
-Provides: syslog, vixie-cron, dailyjobs, anacron, crontabs, rsyslog-gnutls, rsyslog-gssapi, rsyslog-mysql, rsyslog-pgsql, rsyslog-relp, rsyslog-snmp, rsyslog7-elasticsearch, rsyslog7-gnutls, rsyslog7-gssapi, rsyslog7-mysql, rsyslog7-pgsql, rsyslog7-relp, rsyslog7-snmp, rsyslog, rsyslog7, cronie, cronie-noanacron, cronie-anacron, /etc/cron.d, /etc/rsyslog.d
+Provides: syslog, rsyslog-gnutls, rsyslog-gssapi, rsyslog-mysql, rsyslog-pgsql, rsyslog-relp, rsyslog-snmp, rsyslog7-elasticsearch, rsyslog7-gnutls, rsyslog7-gssapi, rsyslog7-mysql, rsyslog7-pgsql, rsyslog7-relp, rsyslog7-snmp, rsyslog, rsyslog7, /etc/rsyslog.d
 
 %description
 This package is a fake one just to avoid some files to be overriden by

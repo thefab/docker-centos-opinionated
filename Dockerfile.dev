@@ -19,8 +19,8 @@ ADD root/build/add_runtime_dependencies.sh /build/add_runtime_dependencies.sh
 RUN /build/add_runtime_dependencies.sh
 
 # Add build dependencies
-ADD root/build/add_buildtime_dependencies.sh /build/add_buildtime_dependencies.sh
-RUN /build/add_buildtime_dependencies.sh
+ADD root/build/add_common_buildtime_dependencies.sh /build/add_common_buildtime_dependencies.sh
+RUN /build/add_common_buildtime_dependencies.sh
 
 # Add envtpl (https://github.com/andreasjansson/envtpl)
 ADD root/build/envtpl.sh /build/envtpl.sh

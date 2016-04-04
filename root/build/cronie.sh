@@ -1,32 +1,25 @@
 #!/bin/bash
 
-VERSION=1.5.0
-ARCHIVE_NAME=cronie-${VERSION}.tar.gz
-DIR_NAME=cronie-${VERSION}
-ARCHIVE_URL=https://fedorahosted.org/releases/c/r/cronie/${ARCHIVE_NAME}
+rm -Rf /build/downloadonly
+mkdir -p /build/downloadonly
+yum install crontabs -y --downloadonly --downloaddir=/build/downloadonly
+
+VERSION=1.4.4-15
+OS_VERSION=6.7
+SRC_RPM=cronie-${VERSION}.el6.src.rpm
+ARCHIVE_URL=http://vault.centos.org/${OS_VERSION}/os/Source/SPackages/${SRC_RPM}
 BUILD_DIR=/build
 
-wget -O ${BUILD_DIR}/${ARCHIVE_NAME} ${ARCHIVE_URL}
-cd ${BUILD_DIR} || exit 1
-zcat ${ARCHIVE_NAME} |tar xvf -
-cd ${DIR_NAME} || exit 1
+wget -O ${BUILD_DIR}/${SRC_RPM} ${ARCHIVE_URL}
+rpm -Uvh ${BUILD_DIR}/${SRC_RPM}
 
-./configure --enable-anacron --enable-syscrontab --enable-syscrontab --prefix=
-make
-make install
+cd /root/rpmbuild/SPECS/ || exit 1
+cat cronie.spec |sed 's/^Requires.*$//g' |sed 's/^Release:.*$/Release: 9999%{?dist}/g' >/root/rpmbuild/SPECS/cronie2.spec
+yum -y install libselinux-devel pam-devel audit-libs-devel
+rpmbuild -ba cronie2.spec
 
-mkdir -p /var/spool/cron
-chmod 777 /var/spool/cron
-touch /etc/cron.deny
-mkdir -p /var/spool/anacron
-chmod 777 /var/spool/anacron
-for FREQ in hourly daily weekly monthly; do 
-    mkdir -p /etc/cron.${FREQ}
-    if test ${FREQ} != "hourly"; then
-        touch /var/spool/anacron/cron.${FREQ}
-    fi
-done
-mkdir -p /etc/cron.d
-cp -f ${BUILD_DIR}/${DIR_NAME}/contrib/anacrontab /etc/anacrontab
-cp -f ${BUILD_DIR}/${DIR_NAME}/contrib/0hourly /etc/cron.d/0hourly
-cp -f ${BUILD_DIR}/${DIR_NAME}/contrib/0anacron /etc/cron.hourly/0anacron
+NEW_VERSION=`echo ${VERSION} |awk -F '-' '{print $1;}'`-9999
+rpm -Uvh /build/downloadonly/crontabs*.rpm /root/rpmbuild/RPMS/x86_64/cronie-anacron-${NEW_VERSION}.el6*.rpm /root/rpmbuild/RPMS/x86_64/cronie-${NEW_VERSION}.el6*.rpm
+echo "cronie" >>/build/original_packages.list
+echo "cronie-anacron" >>/build/original_packages.list
+echo "crontabs" >>/build/original_packages.list
