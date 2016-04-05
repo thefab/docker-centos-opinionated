@@ -25,7 +25,7 @@ Features:
 - Init system and multiple processes launcher/supervisor ([S6](http://skarnet.org/software/s6/overview.html))
 - (optional) syslog daemon ([rsyslog](http://www.rsyslog.com)) and logger binary, can store locally or forward to another syslog with a simple environnement variable
 - (optional) complete cron/anacron daemon ([cronie](https://fedorahosted.org/cronie/))
-- logrotate binary
+- logrotate system
 - Add [epel](https://fedoraproject.org/wiki/EPEL) yum repository but disabled by default (just add `--enablerepo=epel` to your yum commands to use it)
 - Install [envtpl](https://github.com/andreasjansson/envtpl) generic tool to be able to automatically adjust configuration files from environnement
 

@@ -1,5 +1,5 @@
 {% if DCO_RSYSLOG_LOCAL_FILES == "1" %}
-*.info;cron.none    /var/log/messages
+*.*;cron.none       /var/log/messages
 cron.*              /var/log/cron
 {% else %}
 *.*                 /dev/null
