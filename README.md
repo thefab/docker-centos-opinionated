@@ -18,10 +18,10 @@ Features:
 
 - Updated image (at build time)
 - Reasonable size (106MB compressed on the hub), reasonable number of layers (9) with a squashed Dockerfile (and another one to debug)
-- Don't add too many packages (3) by recompiling and installing just what's needed
+- Don't add too many packages by recompiling and installing just what's needed
 - Don't break the upstream system :
-    - add a fake RPM to avoid conflicts between upstream RPM and custom binaries compiled here
-    - add a hidden virtualenv to install a tool and its dependencies without polluting the distribution
+    - rebuild cronie et rsyslog7 from "upstream source RPM" (with some tuning to avoid too much dependencies in docker context)
+    - tricks to avoid distribution interferences (hidden virtualenv in non-standard prefix) 
 - Init system and multiple processes launcher/supervisor ([S6](http://skarnet.org/software/s6/overview.html))
 - (optional) syslog daemon ([rsyslog](http://www.rsyslog.com)) and logger binary, can store locally or forward to another syslog with a simple environnement variable
 - (optional) complete cron/anacron daemon ([cronie](https://fedorahosted.org/cronie/))
