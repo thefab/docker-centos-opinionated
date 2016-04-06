@@ -11,7 +11,7 @@ cat >/usr/local/bin/envtpl <<EOF
 # wrapper script for envtpl in DCO context
 
 source /opt/envtpl/bin/activate
-exec envtpl $*
+exec envtpl \$*
 EOF
 
 chmod +x /usr/local/bin/envtpl
