@@ -126,9 +126,11 @@ Example 2 (will work):
 do_something_with ${MY_CONTAINER_ENV}
 ```
 
-## Help wanted 
+### What about CentOS 7 version ?
 
-- CentOS 7 version
+This repository is only about CentOS 6 version.
+
+For the moment, we don't need a CentOS 7 version so nothing is done. But, probably, a new repository will be launched with the corresponding CentOS 7 version.
 
 ## (some) Inspiration sources
 
