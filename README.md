@@ -1,8 +1,8 @@
 # docker-centos-opinionated
 
 [![Travis](https://img.shields.io/travis/thefab/docker-centos-opinionated.svg)](https://travis-ci.org/thefab/docker-centos-opinionated)
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/thefab/centos-opinionated/centos6.svg)](https://imagelayers.io/?images=thefab/centos-opinionated:centos6)
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/thefab/centos-opinionated/centos6.svg)](https://imagelayers.io/?images=thefab/centos-opinionated:centos6)
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/thefab/centos-opinionated/latest.svg)](https://imagelayers.io/?images=thefab/centos-opinionated:latest)
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/thefab/centos-opinionated/latest.svg)](https://imagelayers.io/?images=thefab/centos-opinionated:latest)
 [![Docker Pulls](https://img.shields.io/docker/pulls/thefab/centos-opinionated.svg)](https://hub.docker.com/r/thefab/centos-opinionated/)
 [![DockerHub](https://img.shields.io/badge/docker%20hub-link-green.svg)](https://hub.docker.com/r/thefab/centos-opinionated/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/thefab/docker-centos-opinionated/blob/master/LICENSE)
@@ -11,7 +11,7 @@
 
 ## Features
 
-This repository holds an opinionated centos (v6) docker image to be used as a 
+This repository holds an opinionated centos (version 6) docker image to be used as a 
 base docker image. Some inspiration sources are given at the end of this file.
 
 Features:
@@ -37,7 +37,7 @@ Features:
 
 Not really usefull (because it's mainly a base image to use in the `FROM` keyword) but you can play with it with (for example):
 
-    docker run -i -t thefab/centos-opinionated:centos6 bash
+    docker run -i -t thefab/centos-opinionated:latest bash
 
 Available environnement variables:
 
@@ -87,7 +87,7 @@ my_image/root/etc/services.d/myapp/run
 With `my_image/Dockerfile` like:
 
 ```
-FROM thefab/centos-opinionated:centos6
+FROM thefab/centos-opinionated
 
 COPY root /
 ```

@@ -5,8 +5,7 @@ services:
 
 script:
     - make build
-    - docker tag `docker images -q |head -1` thefab/centos-opinionated:latest
-    - docker tag `docker images -q |head -1` thefab/centos-opinionated:centos6
-    - docker tag `docker images -q |head -1` thefab/centos-opinionated:centos6.${TRAVIS_COMMIT}
-    - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-    - docker push thefab/centos-opinionated
+
+deploy:
+    provider: script
+    script: make release

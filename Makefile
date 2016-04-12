@@ -1,8 +1,11 @@
+NAME=thefab/centos-opinionated
+VERSION=$(shell ./version.sh)
+
 build:
-	docker build -f Dockerfile.squashed .
+	docker build -f Dockerfile.squashed -t $(NAME):$(VERSION) .
 
 devbuild:
-	docker build -f Dockerfile.dev .
+	docker build -f Dockerfile.dev -t $(NAME):$(VERSION) .
 
 debug: devbuild
-	docker run -i -t `docker images -q |head -1` bash
+	docker run -i -t $(NAME):$(VERSION) bash
