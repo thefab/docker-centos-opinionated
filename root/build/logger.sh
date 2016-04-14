@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # We just copy the binary in /usr/local
 # /usr/bin/logger will we destroyed at the "remote build dependencies" 
 # phase

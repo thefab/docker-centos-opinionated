@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 VERSION=7.4.10-3
 OS_VERSION=6.7
 SRC_RPM=rsyslog7-${VERSION}.el6_6.src.rpm

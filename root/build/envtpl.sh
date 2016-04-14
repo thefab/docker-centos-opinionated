@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 mkdir /opt/envtpl
 virtualenv /opt/envtpl
 source /opt/envtpl/bin/activate

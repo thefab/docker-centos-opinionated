@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 rm -Rf /build/downloadonly
 mkdir -p /build/downloadonly
 yum install crontabs -y --downloadonly --downloaddir=/build/downloadonly
