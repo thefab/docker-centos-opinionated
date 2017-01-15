@@ -5,7 +5,7 @@
 [![DockerHub](https://img.shields.io/badge/docker%20hub-link-green.svg)](https://hub.docker.com/r/thefab/centos-opinionated/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/thefab/docker-centos-opinionated/blob/master/LICENSE)
 [![Maturity](https://img.shields.io/badge/maturity-beta-yellow.svg)](https://github.com/thefab/docker-centos-opinionated)
-[![Maintenance](https://img.shields.io/maintenance/yes/2016.svg)](https://github.com/thefab)
+[![Maintenance](https://img.shields.io/maintenance/yes/2017.svg)](https://github.com/thefab)
 
 ## Features
 
