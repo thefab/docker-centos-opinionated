@@ -128,7 +128,9 @@ do_something_with ${MY_CONTAINER_ENV}
 
 This repository is only about CentOS 6 version.
 
-For the moment, we don't need a CentOS 7 version so nothing is done. But, probably, a new repository will be launched with the corresponding CentOS 7 version.
+A slightly different version of this repository for CentOS 7 is available at:
+
+https://github.com/metwork-framework/docker-centos7-opinionated
 
 ## (some) Inspiration sources
 
